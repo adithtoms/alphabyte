@@ -1,0 +1,14 @@
+<h1>Blog App</h1>
+<%= link_to "Create", "/blog_posts/new", class: "btn btn-primary" %>
+
+
+<div>
+
+<% @blog_posts.each do |blog_post|%>
+<h1><%= link_to blog_post.title, blog_post%></h1>
+<h3><%= blog_post.body %></h3>
+<%= link_to "View", blog_post, class: "btn btn-primary" %>
+<%= link_to "Edit", "/blog_posts/#{blog_post.id}/edit", class: "btn btn-primary" %>
+<% end %>
+
+</div>
